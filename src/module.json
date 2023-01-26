@@ -14,7 +14,7 @@
       "url": "https://github.com/Abourass"
     }
   ],
-  "version": "1.2.1",
+  "version": "1.2.2",
   "compatibility": {
     "minimum": 10,
     "verified": "10.291"
@@ -28,13 +28,13 @@
       }
     ]
   },
-  "styles": ["css/diceaddiction.css"],
+  "styles": [
+    "css/diceaddiction.css"
+  ],
   "scripts": [
-        "scripts/diceaddiction.js"
+    "scripts/diceaddiction.js"
   ],
   "url": "https://github.com/Abourass/foundry-dice-addiction-v2",
   "manifest": "https://raw.githubusercontent.com/Abourass/foundry-dice-addiction-v2/main/module.json",
   "download": "https://raw.githubusercontent.com/Abourass/foundry-dice-addiction-v2/main/dice-addiction.zip"
 }
-
-

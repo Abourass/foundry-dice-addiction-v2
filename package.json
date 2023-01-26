@@ -1,10 +1,10 @@
 {
   "name": "dice-addiction-v2",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Even more dice, even more options to scratch the itch",
   "main": "module.json",
   "scripts": {
-    "zip": "rm -f dice-addiction.zip && zip -r dice-addiction.zip src"
+    "zip": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Abourass/foundry-dice-addiction-v2/issues"
   },
-  "homepage": "https://github.com/Abourass/foundry-dice-addiction-v2#readme"
+  "homepage": "https://github.com/Abourass/foundry-dice-addiction-v2#readme",
+  "devDependencies": {
+    "@types/archiver": "^5.3.1",
+    "@types/node": "^18.11.18"
+  },
+  "dependencies": {
+    "archiver": "^5.3.1"
+  }
 }
