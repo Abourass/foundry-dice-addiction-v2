@@ -2,6 +2,11 @@ import fs from 'fs';
 import archiver from 'archiver';
 import sharp from 'sharp';
 
+
+function camelCaseToNormalCase(text: string){
+  return text.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })
+}
+
 async function buildPackage(){
   const textures: Array<{ name: string, hasBump: boolean }> = [];
 
@@ -14,7 +19,7 @@ async function buildPackage(){
   fs.appendFile(
     './src/scripts/diceaddiction.js', 
     `Hooks.on('diceSoNiceReady', async(dice3d) => {
-  await Promise.all([`,
+  await Promise.all([\n`,
     'utf-8', 
     (err) => {
       if (err) throw err;
@@ -31,7 +36,16 @@ async function buildPackage(){
       if (!fs.existsSync(`./src/textures/${diceTextureName}.webp`)){
         const file = fs.readFileSync(`./assets/textures/${diceTexture}`);
 
-        const convertedFile = await sharp(file).webp({ lossless: true }).toBuffer();
+        const image = sharp(file);
+
+        const { width, height } = await image.metadata();
+        let convertedFile;
+
+        if ((width && width >= 512) || (height && height >= 512)){
+          convertedFile = await image.resize(512, 512).webp({ lossless: true }).toBuffer();
+        } else {
+          convertedFile = await image.webp({ lossless: true }).toBuffer();
+        }
 
         fs.writeFileSync(`./src/textures/${diceTextureName}.webp`, convertedFile);
       }
@@ -66,7 +80,7 @@ async function buildPackage(){
     fs.appendFile(
       './src/scripts/diceaddiction.js', 
       `    dice3d.addTexture("${name}", {
-      name: "📱 ${name}",
+      name: "📱 ${camelCaseToNormalCase(name)}",
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/${name}.webp",
       bump: "${(hasBump) ? `modules/dice-addiction-v2/textures/bump/${name}.webp` : `modules/dice-addiction-v2/textures/${name}.webp`}"
