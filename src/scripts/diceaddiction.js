@@ -204,17 +204,17 @@ Hooks.on('diceSoNiceReady', async(dice3d) => {
       source: "modules/dice-addiction-v2/textures/mood.webp",
       bump: "modules/dice-addiction-v2/textures/mood.webp"
     }),
-    dice3d.addTexture("radialSun", {
-      name: "📱 Radial Sun",
-      composite: "multiply",
-      source: "modules/dice-addiction-v2/textures/radialSun.webp",
-      bump: "modules/dice-addiction-v2/textures/radialSun.webp"
-    }),
     dice3d.addTexture("redgrad", {
       name: "📱 Redgrad",
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/redgrad.webp",
       bump: "modules/dice-addiction-v2/textures/redgrad.webp"
+    }),
+    dice3d.addTexture("radialSun", {
+      name: "📱 Radial Sun",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/radialSun.webp",
+      bump: "modules/dice-addiction-v2/textures/radialSun.webp"
     }),
     dice3d.addTexture("sand", {
       name: "📱 Sand",
@@ -258,12 +258,6 @@ Hooks.on('diceSoNiceReady', async(dice3d) => {
       source: "modules/dice-addiction-v2/textures/valley.webp",
       bump: "modules/dice-addiction-v2/textures/valley.webp"
     }),
-    dice3d.addTexture("vortex", {
-      name: "📱 Vortex",
-      composite: "multiply",
-      source: "modules/dice-addiction-v2/textures/vortex.webp",
-      bump: "modules/dice-addiction-v2/textures/vortex.webp"
-    }),
     dice3d.addTexture("waves", {
       name: "📱 Waves",
       composite: "multiply",
@@ -275,6 +269,12 @@ Hooks.on('diceSoNiceReady', async(dice3d) => {
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/valley2.webp",
       bump: "modules/dice-addiction-v2/textures/valley2.webp"
+    }),
+    dice3d.addTexture("vortex", {
+      name: "📱 Vortex",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/vortex.webp",
+      bump: "modules/dice-addiction-v2/textures/vortex.webp"
     }),
    ]);
 
