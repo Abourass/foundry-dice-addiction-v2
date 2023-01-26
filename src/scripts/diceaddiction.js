@@ -24,17 +24,47 @@ Hooks.on('diceSoNiceReady', async(dice3d) => {
       source: "modules/dice-addiction-v2/textures/BurningHell.webp",
       bump: "modules/dice-addiction-v2/textures/BurningHell.webp"
     }),
+    dice3d.addTexture("CompositePerson", {
+      name: "📱  Composite Person",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/CompositePerson.webp",
+      bump: "modules/dice-addiction-v2/textures/CompositePerson.webp"
+    }),
+    dice3d.addTexture("DoYouSeeTheDots", {
+      name: "📱  Do You See The Dots",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/DoYouSeeTheDots.webp",
+      bump: "modules/dice-addiction-v2/textures/DoYouSeeTheDots.webp"
+    }),
     dice3d.addTexture("LaptopEye", {
       name: "📱  Laptop Eye",
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/LaptopEye.webp",
       bump: "modules/dice-addiction-v2/textures/LaptopEye.webp"
     }),
+    dice3d.addTexture("MagicCircles", {
+      name: "📱  Magic Circles",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/MagicCircles.webp",
+      bump: "modules/dice-addiction-v2/textures/MagicCircles.webp"
+    }),
+    dice3d.addTexture("MoroccanSunrise", {
+      name: "📱  Moroccan Sunrise",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/MoroccanSunrise.webp",
+      bump: "modules/dice-addiction-v2/textures/MoroccanSunrise.webp"
+    }),
     dice3d.addTexture("SaintChess", {
       name: "📱  Saint Chess",
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/SaintChess.webp",
       bump: "modules/dice-addiction-v2/textures/SaintChess.webp"
+    }),
+    dice3d.addTexture("SummoningCircle", {
+      name: "📱  Summoning Circle",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/SummoningCircle.webp",
+      bump: "modules/dice-addiction-v2/textures/SummoningCircle.webp"
     }),
     dice3d.addTexture("astral", {
       name: "📱 Astral",
@@ -228,12 +258,6 @@ Hooks.on('diceSoNiceReady', async(dice3d) => {
       source: "modules/dice-addiction-v2/textures/valley.webp",
       bump: "modules/dice-addiction-v2/textures/valley.webp"
     }),
-    dice3d.addTexture("valley2", {
-      name: "📱 Valley2",
-      composite: "multiply",
-      source: "modules/dice-addiction-v2/textures/valley2.webp",
-      bump: "modules/dice-addiction-v2/textures/valley2.webp"
-    }),
     dice3d.addTexture("vortex", {
       name: "📱 Vortex",
       composite: "multiply",
@@ -245,6 +269,12 @@ Hooks.on('diceSoNiceReady', async(dice3d) => {
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/waves.webp",
       bump: "modules/dice-addiction-v2/textures/waves.webp"
+    }),
+    dice3d.addTexture("valley2", {
+      name: "📱 Valley2",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/valley2.webp",
+      bump: "modules/dice-addiction-v2/textures/valley2.webp"
     }),
    ]);
 
