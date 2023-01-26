@@ -1,24 +1,40 @@
 {
-  "name": "diceaddiction",
-  "title": "Handyfon's Dice Addiction",
-  "description": "MORE DICE, MORE OPTIONS TO SHRATCH THE ITCH!",
-  "author": "Handyfon",
-  "version": "1.1.0",
-  "minimumCoreVersion": "0.7.0",
-  "compatibleCoreVersion": "0.8.8",
+  "id": "dice-addiction-v2",
+  "title": "An Updated version of Handyfon's Dice Addiction",
+  "description": "EVEN MORE DICE, EVEN MORE OPTIONS TO SCRATCH THE ITCH!",
+  "authors": [
+    {
+      "name": "Handyfon",
+      "discord": "https://discord.gg/gs5hAgxBx3",
+      "url": "https://github.com/Handyfon"
+    },
+    {
+      "name": "ModernCannabist",
+      "discord": "ModernCannabist#8321",
+      "url": "https://github.com/Abourass"
+    }
+  ],
+  "version": "1.2.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10.291"
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "dice-so-nice",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/ForgeVTT/fvtt-module-dlopen/master/module.json"
+      }
+    ]
+  },
   "styles": ["css/diceaddiction.css"],
-  "dependencies": [
-        {
-            "type": "module",
-            "name": "dice-so-nice"
-        }
-    ],
   "scripts": [
         "scripts/diceaddiction.js"
   ],
-  "url": "https://github.com/Handyfon/diceaddiction",
-  "manifest": "https://raw.githubusercontent.com/Handyfon/diceaddiction/main/module.json",
-  "download": "https://raw.githubusercontent.com/Handyfon/diceaddiction/main/diceaddiction.zip"
+  "url": "https://github.com/Abourass/foundry-dice-addiction-v2",
+  "manifest": "https://raw.githubusercontent.com/Abourass/foundry-dice-addiction-v2/main/module.json",
+  "download": "https://raw.githubusercontent.com/Abourass/foundry-dice-addiction-v2/main/diceaddiction.zip"
 }
 
 
