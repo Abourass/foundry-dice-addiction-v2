@@ -1,5 +1,5 @@
 Hooks.on('diceSoNiceReady', (dice3d) => {
-	async function loadTextures(){
+	async function loadTextures() {
 		await dice3d.addTexture("Aluminium", {
 			name: "📱 Aluminium",
 			composite: "multiply",
@@ -74,12 +74,12 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/valley.jpg",
 			bump: "modules/dice-addiction-v2/textures/valley.jpg"
-		});	
+		});
 		await dice3d.addTexture("GreenRavine", {
 			name: "📱 Green Ravine",
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/valley2.jpg"
-		});	
+		});
 		await dice3d.addTexture("shadesofmountain", {
 			name: "📱 ShadesOfMountain",
 			composite: "multiply",
@@ -108,7 +108,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/dark_cloudy.jpg",
 			bump: "modules/dice-addiction-v2/textures/dark_cloudy.jpg",
-		});	
+		});
 		await dice3d.addTexture("Mood Dice", {
 			name: "📱 Mood Dice",
 			composite: "multiply",
@@ -120,7 +120,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/9oclock.jpg",
 			bump: "modules/dice-addiction-v2/textures/9oclock.jpg",
-		});	
+		});
 		await dice3d.addTexture("Redgrad", {
 			name: "📱 Redgrad",
 			composite: "multiply",
@@ -160,7 +160,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/magicalforest.jpg",
 			bump: "modules/dice-addiction-v2/textures/magicalforest.jpg",
-		}); 
+		});
 		await dice3d.addTexture("Waves", {
 			name: "📱 Waves",
 			composite: "multiply",
@@ -172,16 +172,16 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/duality.jpg",
 		});
- 		await dice3d.addTexture("Duality2", {
+		await dice3d.addTexture("Duality2", {
 			name: "📱 Duality2",
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/duality2.jpg",
 		});
-  		await dice3d.addTexture("Duality3", {
+		await dice3d.addTexture("Duality3", {
 			name: "📱 Duality3",
 			composite: "multiply",
 			source: "modules/dice-addiction-v2/textures/duality3.jpg",
-		}); 
+		});
 		await dice3d.addTexture("Cobble", {
 			name: "📱 Cobble",
 			composite: "multiply",
@@ -202,7 +202,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 		});
 		loadColors();
 	}
-	async function loadColors(){
+	async function loadColors() {
 		dice3d.addColorset({
 			name: 'gjade',
 			description: "📱 Golden-Jade",
@@ -213,12 +213,12 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			edge: '#9F8003',
 			material: 'metal',
 			font: '📱 Jade',
-			fontScale:{
-			   "d6":1.1,
-			   "df":2.5
+			fontScale: {
+				"d6": 1.1,
+				"df": 2.5
 			},
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'DarkWood',
 			description: "📱 Dark Wood",
@@ -230,12 +230,12 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			edge: '#1f1200',
 			material: 'wood',
 			font: '📱 Lumber',
-			fontScale:{
-			   "d6":1.1,
-			   "df":2.5
+			fontScale: {
+				"d6": 1.1,
+				"df": 2.5
 			},
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Burn',
 			description: "📱 Burn",
@@ -247,12 +247,12 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			edge: '#cc7700',
 			material: 'metal',
 			font: '📱 Fire',
-			fontScale:{
-			   "d6":1.1,
-			   "df":2.5
+			fontScale: {
+				"d6": 1.1,
+				"df": 2.5
 			},
 			visibility: 'visible'
-		},"default");
+		}, "default");
 
 		dice3d.addColorset({
 			name: 'GreenGalaxy',
@@ -265,12 +265,12 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			edge: '#094d00',
 			material: 'metal',
 			font: 'American Typewriter',
-			fontScale:{
-			   "d6":1.1,
-			   "df":2.5
+			fontScale: {
+				"d6": 1.1,
+				"df": 2.5
 			},
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'FrostyCrystal',
 			description: "📱 FrostyCrystal",
@@ -283,7 +283,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: 'American Typewriter',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Duality',
 			description: "📱 Duality (Red/Blue)",
@@ -296,7 +296,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Lumber',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Duality-2',
 			description: "📱 Duality (Red/Green)",
@@ -309,7 +309,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Lumber',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Duality-3',
 			description: "📱 Duality (Green)",
@@ -322,7 +322,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Lumber',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'GreenCloud',
 			description: "📱 GreenCloud",
@@ -335,7 +335,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: 'Arial',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'YellowRavine',
 			description: "📱 YellowRavine",
@@ -348,7 +348,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: 'Arial',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Bloodlines',
 			description: "📱 Bloodlines",
@@ -361,7 +361,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Immortal',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Necromancer',
 			description: "📱 Necromancer",
@@ -374,7 +374,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Horror',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Fabulous Fire',
 			description: "📱 Fabulous Fire",
@@ -387,7 +387,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Forest2',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Fabulous Fire',
 			description: "📱 Fabulous Fire",
@@ -400,7 +400,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Forest2',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Fabulous Fire',
 			description: "📱 Fabulous Fire",
@@ -413,7 +413,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Forest2',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'FluffyCloud',
 			description: "📱 Fluffy Cloud",
@@ -426,7 +426,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Air',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Pirate',
 			description: "📱 Pirate",
@@ -439,7 +439,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'wood',
 			font: '📱 Pirates',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Frozen Lake',
 			description: "📱 Frozen Lake",
@@ -452,7 +452,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'glass',
 			font: '📱 Iceberg',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'Forest',
 			description: "📱 Forest",
@@ -464,7 +464,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			material: 'metal',
 			font: '📱 Forest2',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 		dice3d.addColorset({
 			name: 'ShadesOfMountain',
 			description: "📱 Mountain",
@@ -476,72 +476,71 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 			edge: '#3d0000',
 			material: 'glass',
 			visibility: 'visible'
-		},"default");
+		}, "default");
 	}
 	loadTextures();
 	loadFaces();
-	async function loadFaces(){
-		await dice3d.addSystem({id:"dice-addiction-v2",name:"📱 GoldenAnvil20 (d20, 20 best)"},false);
-		await dice3d.addSystem({id:"dice-addiction-v2a",name:"📱 GoldenAnvil1 (d20, 1 best)"},false);
-		await dice3d.addSystem({id:"dice-addiction-v2answer",name:"📱 TheAnswer (d20, 20 best)"},false);
-		await dice3d.addSystem({id:"dice-addiction-v2answer2",name:"📱 TheAnswer (d20, 1 best)"},false);
+	async function loadFaces() {
+		await dice3d.addSystem({ id: "dice-addiction-v2", name: "📱 GoldenAnvil20 (d20, 20 best)" }, false);
+		await dice3d.addSystem({ id: "dice-addiction-v2a", name: "📱 GoldenAnvil1 (d20, 1 best)" }, false);
+		await dice3d.addSystem({ id: "dice-addiction-v2answer", name: "📱 TheAnswer (d20, 20 best)" }, false);
+		await dice3d.addSystem({ id: "dice-addiction-v2answer2", name: "📱 TheAnswer (d20, 1 best)" }, false);
 		// FOUNDRY DICE
 		await dice3d.addDicePreset({
-			type:"d20",
-			labels:[
-			  '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19',
-			  'modules/dice-addiction-v2/faces/foundrynat20.png'
+			type: "d20",
+			labels: [
+				'1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+				'modules/dice-addiction-v2/faces/foundrynat20.png'
 			],
-			bumpMaps: [,,,,,,,,,,,,,,,,,,,
+			bumpMaps: [, , , , , , , , , , , , , , , , , , ,
 				"modules/dice-addiction-v2/faces/foundrynat20_bump.webp"
 			],
 
-			system:"dice-addiction-v2"
-		});	
+			system: "dice-addiction-v2"
+		});
 		await dice3d.addDicePreset({
-			type:"d20",
-			labels:[
-			  'modules/dice-addiction-v2/faces/foundrynat20.png','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19',
-			  '20'
+			type: "d20",
+			labels: [
+				'modules/dice-addiction-v2/faces/foundrynat20.png', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+				'20'
 			],
-			bumpMaps: ["modules/dice-addiction-v2/faces/foundrynat20_bump.webp",,,,,,,,,,,,,,,,,,,
+			bumpMaps: ["modules/dice-addiction-v2/faces/foundrynat20_bump.webp", , , , , , , , , , , , , , , , , , ,
 			],
-			system:"dice-addiction-v2a"
+			system: "dice-addiction-v2a"
 		});
 		//ANSWER TO ALL
 		await dice3d.addDicePreset({
-			type:"d20",
-			labels:[
-			  '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19',
-			  'modules/dice-addiction-v2/faces/theanswertoall.png'
+			type: "d20",
+			labels: [
+				'1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+				'modules/dice-addiction-v2/faces/the_answer_to_all.png'
 			],
-			bumpMaps: [,,,,,,,,,,,,,,,,,,,
-				"modules/dice-addiction-v2/faces/theanswertoall_bump.png"
+			bumpMaps: [, , , , , , , , , , , , , , , , , , ,
+				"modules/dice-addiction-v2/faces/the_answer_to_all_bump.png"
 			],
 
-			system:"dice-addiction-v2answer"
-		});	
-		await dice3d.addDicePreset({
-			type:"d20",
-			labels:[
-			  'modules/dice-addiction-v2/faces/theanswertoall.png','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19',
-			  '20'
-			],
-			bumpMaps: ["modules/dice-addiction-v2/faces/theanswertoall_bump.png",,,,,,,,,,,,,,,,,,,
-			],
-			system:"dice-addiction-v2answer2"
+			system: "dice-addiction-v2answer"
 		});
-		
+		await dice3d.addDicePreset({
+			type: "d20",
+			labels: [
+				'modules/dice-addiction-v2/faces/the_answer_to_all.png', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+				'20'
+			],
+			bumpMaps: ["modules/dice-addiction-v2/faces/the_answer_to_all_bump.png", , , , , , , , , , , , , , , , , , ,
+			],
+			system: "dice-addiction-v2answer2"
+		});
+
 	}
-	
-	async function loadFontDice(){
+
+	async function loadFontDice() {
 		dice3d.addColorset({
 			name: 'FontDie',
 			description: "📱 FontDie",
 			category: "dice-addiction-v2",
 			font: ['📱 KaushanScript'],
 			visibility: 'hidden'
-		},"default");
+		}, "default");
 	}
-	
 });

@@ -1,45 +1,45 @@
 /*NEW FONTS*/
 @font-face {
     font-family: 📱 Fire;
-    src: url(/modules/diceaddiction/fonts/chp-fire.ttf) format('truetype');
+    src: url(/modules/dice-addiction-v2/fonts/chp-fire.ttf) format('truetype');
 }
 @font-face {
     font-family: 📱 Air;
-    src: url(/modules/diceaddiction/fonts/SomethingLight-L3VAD.ttf) format('truetype');
+    src: url(/modules/dice-addiction-v2/fonts/SomethingLight-L3VAD.ttf) format('truetype');
 }
 @font-face {
     font-family: 📱 Forest2;
-    src: url(/modules/diceaddiction/fonts/Castal_Street.ttf) format("truetype") ;
+    src: url(/modules/dice-addiction-v2/fonts/Castal_Street.ttf) format("truetype") ;
 }
 @font-face {
     font-family: 📱 Lumber;
-    src: url(/modules/diceaddiction/fonts/Lumberjack_Rough.otf) format("opentype") ;
+    src: url(/modules/dice-addiction-v2/fonts/Lumberjack_Rough.otf) format("opentype") ;
 }
 @font-face {
     font-family: 📱 Jade;
-    src: url(/modules/diceaddiction/fonts/Jade_20Monkey_20BTN.ttf) format("truetype") ;
+    src: url(/modules/dice-addiction-v2/fonts/Jade_20Monkey_20BTN.ttf) format("truetype") ;
 }
 @font-face {
     font-family: 📱 Immortal;
-    src: url(/modules/diceaddiction/fonts/IMMRTLT_.ttf) format("truetype") ;
+    src: url(/modules/dice-addiction-v2/fonts/IMMRTLT_.ttf) format("truetype") ;
 } 
 @font-face {
     font-family: 📱 Horror;
-    src: url(/modules/diceaddiction/fonts/wet1_becker.ttf) format("truetype") ;
+    src: url(/modules/dice-addiction-v2/fonts/wet1_becker.ttf) format("truetype") ;
 } 
 @font-face {
     font-family: 📱 Pirates;
-    src: url(/modules/diceaddiction/fonts/HelloPirates-PersonalUse.otf) format("opentype") ;
+    src: url(/modules/dice-addiction-v2/fonts/HelloPirates-PersonalUse.otf) format("opentype") ;
 } 
 @font-face {
     font-family: 📱 KaushanScript;
-    src: url(/modules/diceaddiction/fonts/KaushanScript-Regular.ttf) format("truetype") ;
+    src: url(/modules/dice-addiction-v2/fonts/KaushanScript-Regular.ttf) format("truetype") ;
 } 
 @font-face {
     font-family: 📱 GreatVibes;
-    src: url(/modules/diceaddiction/fonts/GreatVibes-Regular.ttf) format("truetype") ;
+    src: url(/modules/dice-addiction-v2/fonts/GreatVibes-Regular.ttf) format("truetype") ;
 } 
 @font-face {
     font-family: 📱 Iceberg;
-    src: url(/modules/diceaddiction/fonts/Iceberg-Regular.ttf) format("truetype") ;
+    src: url(/modules/dice-addiction-v2/fonts/Iceberg-Regular.ttf) format("truetype") ;
 } 
