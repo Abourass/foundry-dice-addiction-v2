@@ -1,6 +1,6 @@
 {
   "id": "dice-addiction-v2",
-  "title": "An Updated version of Handyfon's Dice Addiction",
+  "title": "Dice Addiction V2",
   "description": "EVEN MORE DICE, EVEN MORE OPTIONS TO SCRATCH THE ITCH!",
   "authors": [
     {
@@ -14,7 +14,7 @@
       "url": "https://github.com/Abourass"
     }
   ],
-  "version": "1.2.0",
+  "version": "1.2.1",
   "compatibility": {
     "minimum": 10,
     "verified": "10.291"
