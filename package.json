@@ -1,0 +1,19 @@
+{
+  "name": "dice-addiction-v2",
+  "version": "1.2.0",
+  "description": "Even more dice, even more options to scratch the itch",
+  "main": "module.json",
+  "scripts": {
+    "zip": "rm -f dice-addiction.zip && zip -r dice-addiction.zip src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abourass/foundry-dice-addiction-v2.git"
+  },
+  "author": "Abourass",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abourass/foundry-dice-addiction-v2/issues"
+  },
+  "homepage": "https://github.com/Abourass/foundry-dice-addiction-v2#readme"
+}
