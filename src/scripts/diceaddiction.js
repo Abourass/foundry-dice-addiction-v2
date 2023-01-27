@@ -1,5 +1,419 @@
 Hooks.on('diceSoNiceReady', async(dice3d) => {
   await Promise.all([
+    dice3d.addTexture("9oclock", {
+      name: "📱 9oclock",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/9oclock.webp",
+      bump: "modules/dice-addiction-v2/textures/9oclock.webp"
+    }),
+    dice3d.addTexture("Aluminium", {
+      name: "📱 Aluminium",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/aluminium.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/aluminium.webp"
+    }),
+    dice3d.addTexture("Astral", {
+      name: "📱 Astral",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/astral.webp",
+      bump: "modules/dice-addiction-v2/textures/astral.webp"
+    }),
+    dice3d.addTexture("AstralClouds", {
+      name: "📱 Astral Clouds",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/astralClouds.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/astralClouds.webp"
+    }),
+    dice3d.addTexture("AstralCloudsGrayscale", {
+      name: "📱 Astral Clouds Grayscale",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/astralCloudsGrayscale.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/astralClouds.webp"
+    }),
+    dice3d.addTexture("BeachSand", {
+      name: "📱 Beach Sand",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/beachSand.webp",
+      bump: "modules/dice-addiction-v2/textures/beachSand.webp"
+    }),
+    dice3d.addTexture("BigEye", {
+      name: "📱 Big Eye",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/bigEye.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/bigEye.webp"
+    }),
+    dice3d.addTexture("BigEyeGrayscale", {
+      name: "📱 Big Eye Grayscale",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/bigEyeGrayscale.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/bigEye.webp"
+    }),
+    dice3d.addTexture("BigSparks", {
+      name: "📱 Big Sparks",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/bigSparks.webp",
+      bump: "modules/dice-addiction-v2/textures/bigSparks.webp"
+    }),
+    dice3d.addTexture("BikeRideGrayscale", {
+      name: "📱 Bike Ride Grayscale",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/bikeRideGrayscale.webp",
+      bump: "modules/dice-addiction-v2/textures/bikeRideGrayscale.webp"
+    }),
+    dice3d.addTexture("Blatt", {
+      name: "📱 Blatt",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/blatt.webp",
+      bump: "modules/dice-addiction-v2/textures/blatt.webp"
+    }),
+    dice3d.addTexture("Bloody", {
+      name: "📱 Bloody",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/bloody.webp",
+      bump: "modules/dice-addiction-v2/textures/bloody.webp"
+    }),
+    dice3d.addTexture("Boiling", {
+      name: "📱 Boiling",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/boiling.webp",
+      bump: "modules/dice-addiction-v2/textures/boiling.webp"
+    }),
+    dice3d.addTexture("BurningHell", {
+      name: "📱 Burning Hell",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/burningHell.webp",
+      bump: "modules/dice-addiction-v2/textures/burningHell.webp"
+    }),
+    dice3d.addTexture("Carved", {
+      name: "📱 Carved",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/carved.webp",
+      bump: "modules/dice-addiction-v2/textures/carved.webp"
+    }),
+    dice3d.addTexture("Cobble", {
+      name: "📱 Cobble",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/cobble.webp",
+      bump: "modules/dice-addiction-v2/textures/cobble.webp"
+    }),
+    dice3d.addTexture("CompositePerson", {
+      name: "📱 Composite Person",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/compositePerson.webp",
+      bump: "modules/dice-addiction-v2/textures/compositePerson.webp"
+    }),
+    dice3d.addTexture("CollapseIn", {
+      name: "📱 Collapse In",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/collapseIn.webp",
+      bump: "modules/dice-addiction-v2/textures/collapseIn.webp"
+    }),
+    dice3d.addTexture("CompositePersonGrayscale", {
+      name: "📱 Composite Person Grayscale",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/compositePersonGrayscale.webp",
+      bump: "modules/dice-addiction-v2/textures/compositePersonGrayscale.webp"
+    }),
+    dice3d.addTexture("DarkCloudy", {
+      name: "📱 Dark Cloudy",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/darkCloudy.webp",
+      bump: "modules/dice-addiction-v2/textures/darkCloudy.webp"
+    }),
+    dice3d.addTexture("DarkCobble", {
+      name: "📱 Dark Cobble",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/darkCobble.webp",
+      bump: "modules/dice-addiction-v2/textures/darkCobble.webp"
+    }),
+    dice3d.addTexture("DarkCrystal", {
+      name: "📱 Dark Crystal",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/darkCrystal.webp",
+      bump: "modules/dice-addiction-v2/textures/darkCrystal.webp"
+    }),
+    dice3d.addTexture("DeathIsSoBright", {
+      name: "📱 Death Is So Bright",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/deathIsSoBright.webp",
+      bump: "modules/dice-addiction-v2/textures/deathIsSoBright.webp"
+    }),
+    dice3d.addTexture("DeathIsSoBrightGrayscale", {
+      name: "📱 Death Is So Bright Grayscale",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/deathIsSoBrightGrayscale.webp",
+      bump: "modules/dice-addiction-v2/textures/deathIsSoBrightGrayscale.webp"
+    }),
+    dice3d.addTexture("DoYouSeeTheDots", {
+      name: "📱 Do You See The Dots",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/doYouSeeTheDots.webp",
+      bump: "modules/dice-addiction-v2/textures/doYouSeeTheDots.webp"
+    }),
+    dice3d.addTexture("Duality", {
+      name: "📱 Duality",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/duality.webp",
+      bump: "modules/dice-addiction-v2/textures/duality.webp"
+    }),
+    dice3d.addTexture("Duality2", {
+      name: "📱 Duality2",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/duality2.webp",
+      bump: "modules/dice-addiction-v2/textures/duality2.webp"
+    }),
+    dice3d.addTexture("Duality3", {
+      name: "📱 Duality3",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/duality3.webp",
+      bump: "modules/dice-addiction-v2/textures/duality3.webp"
+    }),
+    dice3d.addTexture("ElysianMarble", {
+      name: "📱 Elysian Marble",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/elysianMarble.webp",
+      bump: "modules/dice-addiction-v2/textures/elysianMarble.webp"
+    }),
+    dice3d.addTexture("Fabulous", {
+      name: "📱 Fabulous",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/fabulous.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/fabulous.webp"
+    }),
+    dice3d.addTexture("FluffyClouds", {
+      name: "📱 Fluffy Clouds",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/fluffyClouds.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/fluffyClouds.webp"
+    }),
+    dice3d.addTexture("FabulousFire", {
+      name: "📱 Fabulous Fire",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/fabulousFire.webp",
+      bump: "modules/dice-addiction-v2/textures/fabulousFire.webp"
+    }),
+    dice3d.addTexture("FallenDeep", {
+      name: "📱 Fallen Deep",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/fallenDeep.webp",
+      bump: "modules/dice-addiction-v2/textures/fallenDeep.webp"
+    }),
+    dice3d.addTexture("FrozenLake", {
+      name: "📱 Frozen Lake",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/frozenLake.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/frozenLake.webp"
+    }),
+    dice3d.addTexture("Galaxy", {
+      name: "📱 Galaxy",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/galaxy.webp",
+      bump: "modules/dice-addiction-v2/textures/galaxy.webp"
+    }),
+    dice3d.addTexture("GloLava", {
+      name: "📱 Glo Lava",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/gloLava.webp",
+      bump: "modules/dice-addiction-v2/textures/gloLava.webp"
+    }),
+    dice3d.addTexture("GltichWizard", {
+      name: "📱 Gltich Wizard",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/gltichWizard.webp",
+      bump: "modules/dice-addiction-v2/textures/gltichWizard.webp"
+    }),
+    dice3d.addTexture("Iceberg", {
+      name: "📱 Iceberg",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/iceberg.webp",
+      bump: "modules/dice-addiction-v2/textures/iceberg.webp"
+    }),
+    dice3d.addTexture("IkeRide", {
+      name: "📱 Ike Ride",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/ikeRide.webp",
+      bump: "modules/dice-addiction-v2/textures/ikeRide.webp"
+    }),
+    dice3d.addTexture("MagicCircles", {
+      name: "📱 Magic Circles",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/magicCircles.webp",
+      bump: "modules/dice-addiction-v2/textures/magicCircles.webp"
+    }),
+    dice3d.addTexture("MeltingWitch", {
+      name: "📱 Melting Witch",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/meltingWitch.webp",
+      bump: "modules/dice-addiction-v2/textures/meltingWitch.webp"
+    }),
+    dice3d.addTexture("LaptopEye", {
+      name: "📱 Laptop Eye",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/laptopEye.webp",
+      bump: "modules/dice-addiction-v2/textures/laptopEye.webp"
+    }),
+    dice3d.addTexture("Lumber", {
+      name: "📱 Lumber",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/lumber.webp",
+      bump: "modules/dice-addiction-v2/textures/lumber.webp"
+    }),
+    dice3d.addTexture("MindOnFire", {
+      name: "📱 Mind On Fire",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/mindOnFire.webp",
+      bump: "modules/dice-addiction-v2/textures/mindOnFire.webp"
+    }),
+    dice3d.addTexture("Mood", {
+      name: "📱 Mood",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/mood.webp",
+      bump: "modules/dice-addiction-v2/textures/mood.webp"
+    }),
+    dice3d.addTexture("MoonsOutTonight", {
+      name: "📱 Moons Out Tonight",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/moonsOutTonight.webp",
+      bump: "modules/dice-addiction-v2/textures/moonsOutTonight.webp"
+    }),
+    dice3d.addTexture("MoroccanSunrise", {
+      name: "📱 Moroccan Sunrise",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/moroccanSunrise.webp",
+      bump: "modules/dice-addiction-v2/textures/moroccanSunrise.webp"
+    }),
+    dice3d.addTexture("Mahagoni", {
+      name: "📱 Mahagoni",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/mahagoni.webp",
+      bump: "modules/dice-addiction-v2/textures/mahagoni.webp"
+    }),
+    dice3d.addTexture("RadialSun", {
+      name: "📱 Radial Sun",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/radialSun.webp",
+      bump: "modules/dice-addiction-v2/textures/radialSun.webp"
+    }),
+    dice3d.addTexture("Redgrad", {
+      name: "📱 Redgrad",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/redgrad.webp",
+      bump: "modules/dice-addiction-v2/textures/redgrad.webp"
+    }),
+    dice3d.addTexture("Refraction", {
+      name: "📱 Refraction",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/refraction.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/refraction.webp"
+    }),
+    dice3d.addTexture("SaintChess", {
+      name: "📱 Saint Chess",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/saintChess.webp",
+      bump: "modules/dice-addiction-v2/textures/saintChess.webp"
+    }),
+    dice3d.addTexture("Sand", {
+      name: "📱 Sand",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/sand.webp",
+      bump: "modules/dice-addiction-v2/textures/sand.webp"
+    }),
+    dice3d.addTexture("SandOfHades", {
+      name: "📱 Sand Of Hades",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/sandOfHades.webp",
+      bump: "modules/dice-addiction-v2/textures/sandOfHades.webp"
+    }),
+    dice3d.addTexture("ShadesOfMountain", {
+      name: "📱 Shades Of Mountain",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/shadesOfMountain.webp",
+      bump: "modules/dice-addiction-v2/textures/shadesOfMountain.webp"
+    }),
+    dice3d.addTexture("Sparks", {
+      name: "📱 Sparks",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/sparks.webp",
+      bump: "modules/dice-addiction-v2/textures/sparks.webp"
+    }),
+    dice3d.addTexture("Splash", {
+      name: "📱 Splash",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/splash.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/splash.webp"
+    }),
+    dice3d.addTexture("SummoningCircle", {
+      name: "📱 Summoning Circle",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/summoningCircle.webp",
+      bump: "modules/dice-addiction-v2/textures/summoningCircle.webp"
+    }),
+    dice3d.addTexture("SunkenShip", {
+      name: "📱 Sunken Ship",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/sunkenShip.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/sunkenShip.webp"
+    }),
+    dice3d.addTexture("Swirl", {
+      name: "📱 Swirl",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/swirl.webp",
+      bump: "modules/dice-addiction-v2/textures/swirl.webp"
+    }),
+    dice3d.addTexture("Tab", {
+      name: "📱 Tab",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/tab.webp",
+      bump: "modules/dice-addiction-v2/textures/tab.webp"
+    }),
+    dice3d.addTexture("Transparent", {
+      name: "📱 Transparent",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/transparent.webp",
+      bump: "modules/dice-addiction-v2/textures/transparent.webp"
+    }),
+    dice3d.addTexture("Valley", {
+      name: "📱 Valley",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/valley.webp",
+      bump: "modules/dice-addiction-v2/textures/valley.webp"
+    }),
+    dice3d.addTexture("Valley2", {
+      name: "📱 Valley2",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/valley2.webp",
+      bump: "modules/dice-addiction-v2/textures/valley2.webp"
+    }),
+    dice3d.addTexture("VampireCastle", {
+      name: "📱 Vampire Castle",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/vampireCastle.webp",
+      bump: "modules/dice-addiction-v2/textures/vampireCastle.webp"
+    }),
+    dice3d.addTexture("Vortex", {
+      name: "📱 Vortex",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/vortex.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/vortex.webp"
+    }),
+    dice3d.addTexture("Waves", {
+      name: "📱 Waves",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/waves.webp",
+      bump: "modules/dice-addiction-v2/textures/bump/waves.webp"
+    }),
+    dice3d.addTexture("MagicalForest", {
+      name: "📱 Magical Forest",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/magicalForest.webp",
+      bump: "modules/dice-addiction-v2/textures/magicalForest.webp"
+    }),
+    dice3d.addTexture("Magma", {
+      name: "📱 Magma",
+      composite: "multiply",
+      source: "modules/dice-addiction-v2/textures/magma.webp",
+      bump: "modules/dice-addiction-v2/textures/magma.webp"
+    }),
    ]);
 
 

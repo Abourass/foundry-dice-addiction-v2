@@ -8,6 +8,10 @@ function camelCaseToNormalCase(text: string){
   return text.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })
 }
 
+function camelCaseToPascalCase(text: string){
+  return text.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); }).replace(/\s/g, '');
+}
+
 async function buildPackage(){
   const textures: Array<{ name: string, hasBump: boolean }> = [];
 
@@ -74,10 +78,16 @@ async function buildPackage(){
         return 'new';
       }
 
-      const textureIndex = textures.findIndex((texture) => texture.name === bumpMapName);
+      // Check for normal bump map
+      const textureIndex = textures.findIndex(({ name }) => name === bumpMapName);
       if (textureIndex !== -1) textures[textureIndex].hasBump = true;
+
+      // Check for grayscale bump map
+      const grayscaleTextureIndex = textures.findIndex(({ name }) => name === `${bumpMapName}Grayscale`);
+      if (grayscaleTextureIndex !== -1) textures[grayscaleTextureIndex].hasBump = true;
     })
   ]);
+
 
   const sortedTextures = textures.sort(((a, b) => (a.name > b.name) ? 1 : -1));
 
@@ -86,11 +96,13 @@ async function buildPackage(){
     ...sortedTextures.map(async({ name, hasBump }) => {
     await appendFile(
       './src/scripts/diceaddiction.js', 
-      `    dice3d.addTexture("${name}", {
+      `    dice3d.addTexture("${camelCaseToPascalCase(name)}", {
       name: "📱 ${camelCaseToNormalCase(name)}",
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/${name}.webp",
-      bump: "${(hasBump) ? `modules/dice-addiction-v2/textures/bump/${name}.webp` : `modules/dice-addiction-v2/textures/${name}.webp`}"
+      bump: "${(hasBump) 
+        ? `modules/dice-addiction-v2/textures/bump/${name.includes('Grayscale') ? name.split('Grayscale')[0] : name}.webp` 
+        : `modules/dice-addiction-v2/textures/${name}.webp`}"
     }),\n`,
       'utf-8');
   })
