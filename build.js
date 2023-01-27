@@ -28,8 +28,8 @@ async function buildPackage() {
                 const image = (0, sharp_1.default)(file);
                 const { width, height } = await image.metadata();
                 let convertedFile;
-                if ((width && width >= 512) || (height && height >= 512)) {
-                    convertedFile = await image.resize(512, 512).webp({ lossless: true }).toBuffer();
+                if ((width && width >= 256) || (height && height >= 256)) {
+                    convertedFile = await image.resize(256, 256).webp({ lossless: true }).toBuffer();
                 }
                 else {
                     convertedFile = await image.webp({ lossless: true }).toBuffer();
@@ -51,8 +51,8 @@ async function buildPackage() {
                 const image = (0, sharp_1.default)(file);
                 const { width, height } = await image.metadata();
                 let convertedFile;
-                if ((width && width >= 512) || (height && height >= 512)) {
-                    convertedFile = await image.resize(512, 512).webp({ lossless: true }).toBuffer();
+                if ((width && width >= 256) || (height && height >= 256)) {
+                    convertedFile = await image.resize(256, 256).webp({ lossless: true }).toBuffer();
                 }
                 else {
                     convertedFile = await image.webp({ lossless: true }).toBuffer();

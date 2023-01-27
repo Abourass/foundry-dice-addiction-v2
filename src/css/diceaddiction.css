@@ -4,6 +4,10 @@
     src: url(/modules/dice-addiction-v2/fonts/chp-fire.ttf) format('truetype');
 }
 @font-face {
+    font-family: 📱 Delius;
+    src: url(/modules/dice-addiction-v2/fonts/DeliusSwashCaps-Regular.ttf) format('truetype');
+}
+@font-face {
     font-family: 📱 Air;
     src: url(/modules/dice-addiction-v2/fonts/SomethingLight-L3VAD.ttf) format('truetype');
 }
