@@ -126,7 +126,7 @@ async function buildPackage(){
     description: "📱 Dotty",
     category: "dice-addiction-v2",
     texture: 'DoYouSeeTheDots',
-    foreground: '#ffffff',
+    foreground: 'transparent',
     background: "#000000",
     outline: '#ffffff',
     edge: '#ffffff',
