@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { readFile, writeFile, appendFile } from 'fs/promises';
 import archiver from 'archiver';
 import sharp from 'sharp';
 
@@ -11,33 +12,27 @@ async function buildPackage(){
   const textures: Array<{ name: string, hasBump: boolean }> = [];
 
   // Lets start by removing our diceaddiction.js from from the src directory
-  if (fs.existsSync('./src/scripts/diceaddiction.js')){
-    fs.unlinkSync('./src/scripts/diceaddiction.js');
-  }
+  if (fs.existsSync('./src/scripts/diceaddiction.js')) fs.unlinkSync('./src/scripts/diceaddiction.js');
+
 
   // Lets open a write stream we will write too for writing our diceaddiction.js file
-  fs.appendFile(
+  await appendFile(
     './src/scripts/diceaddiction.js', 
     `Hooks.on('diceSoNiceReady', async(dice3d) => {
   await Promise.all([\n`,
-    'utf-8', 
-    (err) => {
-      if (err) throw err;
-    }
+    'utf-8',
   );
 
   // Then we will copy our dice textures into our src/textures directory, after converting them to webp
-  const diceTextures = fs.readdirSync('./assets/textures');
+  const diceTextures = fs.readdirSync('./assets/textures').sort();
 
-  await Promise.all([
-    diceTextures.map(async(diceTexture) => {
+  const newTextures = await Promise.all([
+    ...diceTextures.map(async(diceTexture) => {
       const diceTextureName = diceTexture.split('.')[0];
 
       if (!fs.existsSync(`./src/textures/${diceTextureName}.webp`)){
-        const file = fs.readFileSync(`./assets/textures/${diceTexture}`);
-
+        const file = await readFile(`./assets/textures/${diceTexture}`);
         const image = sharp(file);
-
         const { width, height } = await image.metadata();
         let convertedFile;
 
@@ -47,7 +42,8 @@ async function buildPackage(){
           convertedFile = await image.webp({ lossless: true }).toBuffer();
         }
 
-        fs.writeFileSync(`./src/textures/${diceTextureName}.webp`, convertedFile);
+        await writeFile(`./src/textures/${diceTextureName}.webp`, convertedFile);
+        return 'new';
       }
 
       // We will then write our dice texture to our diceaddiction.js file
@@ -56,18 +52,20 @@ async function buildPackage(){
   ]);
 
   // We start by copying our bump maps into our src/textures/bump directory, after converting them to webp
-  const bumpMaps = fs.readdirSync('./assets/bump');
+  const bumpMaps = fs.readdirSync('./assets/bump').sort();
 
-  await Promise.all([
-    bumpMaps.map(async(bumpMap) => {
+  const newBumpMaps = await Promise.all([
+    ...bumpMaps.map(async(bumpMap) => {
       const bumpMapName = bumpMap.split('.')[0];
 
       if (!fs.existsSync(`./src/textures/bump/${bumpMapName}.webp`)){
-        const file = fs.readFileSync(`./assets/bump/${bumpMap}`);
+        const file = await readFile(`./assets/bump/${bumpMap}`);
+        const image = sharp(file);
 
-        const convertedFile = await sharp(file).webp({ lossless: true }).toBuffer();
+        const convertedFile = await image.webp({ lossless: true }).toBuffer();
 
-        fs.writeFileSync(`./src/textures/bump/${bumpMapName}.webp`, convertedFile);
+        await writeFile(`./src/textures/bump/${bumpMapName}.webp`, convertedFile);
+        return 'new';
       }
 
       const textureIndex = textures.findIndex((texture) => texture.name === bumpMapName);
@@ -75,9 +73,12 @@ async function buildPackage(){
     })
   ]);
 
+  const sortedTextures = textures.sort(((a, b) => (a.name > b.name) ? 1 : -1));
+
   // We will then write our dice textures to our diceaddiction.js file
-  textures.forEach(({ name, hasBump }) => {
-    fs.appendFile(
+  await Promise.all([
+    ...sortedTextures.map(async({ name, hasBump }) => {
+    await appendFile(
       './src/scripts/diceaddiction.js', 
       `    dice3d.addTexture("${name}", {
       name: "📱 ${camelCaseToNormalCase(name)}",
@@ -85,31 +86,31 @@ async function buildPackage(){
       source: "modules/dice-addiction-v2/textures/${name}.webp",
       bump: "${(hasBump) ? `modules/dice-addiction-v2/textures/bump/${name}.webp` : `modules/dice-addiction-v2/textures/${name}.webp`}"
     }),\n`,
-      'utf-8',
-      (err) => {
-        if (err) throw err;
-      });
+      'utf-8');
   })
+  ])
+  
 
   // Then we will copy our dice faces into our src/faces directory, after converting them to webp
   const diceFaces = fs.readdirSync('./assets/faces');
 
-  await Promise.all([
-    diceFaces.map(async(diceFace) => {
+  const newDiceFaces = await Promise.all([
+    ...diceFaces.map(async(diceFace) => {
       const diceFaceName = diceFace.split('.')[0];
 
       if (!fs.existsSync(`./src/faces/${diceFaceName}.webp`)){
-        const file = fs.readFileSync(`./assets/faces/${diceFace}`);
+        const file = await readFile(`./assets/faces/${diceFace}`);
+        const image = sharp(file);
+        const convertedFile = await image.webp({ lossless: true }).toBuffer();
 
-        const convertedFile = await sharp(file).webp({ lossless: true }).toBuffer();
-
-        fs.writeFileSync(`./src/faces/${diceFaceName}.webp`, convertedFile);
+        await writeFile(`./src/faces/${diceFaceName}.webp`, convertedFile);
+        return 'new';
       }
     })
   ]);
 
   // Then we will write our color profiles to our diceaddiction.js file
-  fs.appendFile(
+  await appendFile(
     './src/scripts/diceaddiction.js',
     `   ]);
 
@@ -388,11 +389,10 @@ async function buildPackage(){
     visibility: 'visible'
   }, "default");\n`,
     'utf-8',
-    (err) => { if (err) throw err; }
   );
 
   // We will then write our dice faces to our diceaddiction.js file
-    fs.appendFile(
+    await appendFile(
       './src/scripts/diceaddiction.js', 
       `
   await Promise.all([
@@ -448,7 +448,6 @@ async function buildPackage(){
   ]);
 });`,
       'utf-8',
-      (err) => { if (err) throw err; }
     );
   
   // We will start by getting the package.json
@@ -462,16 +461,14 @@ async function buildPackage(){
     moduleDeclaration.version = packageDeclaration.version;
 
     console.log(`Updated version to ${packageDeclaration.version}`);
-    fs.writeFileSync('./module.json', JSON.stringify(moduleDeclaration, null, 2));
+    await writeFile('./module.json', JSON.stringify(moduleDeclaration, null, 2));
   }
 
   // We will copy our root module.json into the src directory
-  fs.writeFileSync('./src/module.json', JSON.stringify(moduleDeclaration, null, 2));
+  await writeFile('./src/module.json', JSON.stringify(moduleDeclaration, null, 2));
 
   // We will then delete the dice-addiction.zip so we can create a new one
-  if (fs.existsSync('./dice-addiction.zip')){
-    fs.unlinkSync('./dice-addiction.zip');
-  }
+  if (fs.existsSync('./dice-addiction.zip')) fs.unlinkSync('./dice-addiction.zip');
 
   // Then we will zip the src directory and rename it to dice-addiction.zip
   const output = fs.createWriteStream('./dice-addiction.zip');
@@ -499,6 +496,12 @@ async function buildPackage(){
   archive.directory('./src/', false);
 
   archive.finalize();
+
+  console.table({
+    'New Textures': newTextures.filter(i => i).length,
+    'New Bump Maps': newBumpMaps.filter(i => i).length,
+    'New Dice Face': newDiceFaces.filter(i => i).length,
+  })
 }
 
 (async() => {
