@@ -120,6 +120,24 @@ async function buildPackage(){
     './src/scripts/diceaddiction.js',
     `   ]);
 
+
+  dice3d.addColorset({
+    name: 'Dotty',
+    description: "📱 Dotty",
+    category: "dice-addiction-v2",
+    texture: 'DoYouSeeTheDots',
+    foreground: '#ffffff',
+    background: "#000000",
+    outline: '#ffffff',
+    edge: '#ffffff',
+    material: 'metal',
+    font: '📱 Iceberg',
+    fontScale: {
+      "d6": 1.1,
+      "df": 2.5
+    },
+    visibility: 'visible'
+  }, "default");
   dice3d.addColorset({
     name: 'gjade',
     description: "📱 Golden-Jade",
