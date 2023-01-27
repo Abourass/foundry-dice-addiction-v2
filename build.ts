@@ -61,8 +61,14 @@ async function buildPackage(){
       if (!fs.existsSync(`./src/textures/bump/${bumpMapName}.webp`)){
         const file = await readFile(`./assets/bump/${bumpMap}`);
         const image = sharp(file);
+        const { width, height } = await image.metadata();
+        let convertedFile;
 
-        const convertedFile = await image.webp({ lossless: true }).toBuffer();
+        if ((width && width >= 512) || (height && height >= 512)){
+          convertedFile = await image.resize(512, 512).webp({ lossless: true }).toBuffer();
+        } else {
+          convertedFile = await image.webp({ lossless: true }).toBuffer();
+        }
 
         await writeFile(`./src/textures/bump/${bumpMapName}.webp`, convertedFile);
         return 'new';
