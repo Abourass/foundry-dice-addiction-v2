@@ -127,15 +127,26 @@ async function buildPackage(){
     category: "dice-addiction-v2",
     texture: 'DoYouSeeTheDots',
     foreground: 'transparent',
-    background: "#000000",
+    background: "transparent",
     outline: '#ffffff',
     edge: '#ffffff',
     material: 'metal',
     font: '📱 Iceberg',
-    fontScale: {
-      "d6": 1.1,
-      "df": 2.5
-    },
+    fontScale: { "d6": 1.1, "df": 2.5 },
+    visibility: 'visible'
+  }, "default");
+  dice3d.addColorset({
+    name: 'bigEyeGrayscale',
+    description: "📱 Big Eye (Grayscale)",
+    category: "dice-addiction-v2",
+    texture: 'bigEyeGrayscale',
+    foreground: 'transparent',
+    background: "transparent",
+    outline: '#ffffff',
+    edge: '#ffffff',
+    material: 'metal',
+    font: '📱 Iceberg',
+    fontScale: { "d6": 1.1, "df": 2.5 },
     visibility: 'visible'
   }, "default");
   dice3d.addColorset({
