@@ -41,9 +41,9 @@ async function buildPackage(){
         let convertedFile;
 
         if ((width && width >= 256) || (height && height >= 256)){
-          convertedFile = await image.resize(256, 256).webp({ lossless: true }).toBuffer();
+          convertedFile = await image.resize(256, 256).webp({ nearLossless: true }).toBuffer();
         } else {
-          convertedFile = await image.webp({ lossless: true }).toBuffer();
+          convertedFile = await image.webp({ nearLossless: true }).toBuffer();
         }
 
         await writeFile(`./src/textures/${diceTextureName}.webp`, convertedFile);
