@@ -1,6 +1,6 @@
 {
   "name": "dice-addiction-v2",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Even more dice, even more options to scratch the itch",
   "main": "module.json",
   "scripts": {

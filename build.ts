@@ -22,7 +22,8 @@ async function buildPackage(){
   // Lets open a write stream we will write too for writing our diceaddiction.js file
   await appendFile(
     './src/scripts/diceaddiction.js', 
-    `Hooks.on('diceSoNiceReady', async(dice3d) => {\n`,
+    `Hooks.on('diceSoNiceReady', async(dice3d) => {
+  await Promise.all([\n`,
     'utf-8',
   );
 
@@ -95,14 +96,14 @@ async function buildPackage(){
     ...sortedTextures.map(async({ name, hasBump }) => {
     await appendFile(
       './src/scripts/diceaddiction.js', 
-      `  await dice3d.addTexture("${camelCaseToPascalCase(name)}", {
+      `    dice3d.addTexture("${camelCaseToPascalCase(name)}", {
       name: "📱 ${camelCaseToNormalCase(name)}",
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/${name}.webp",
       bump: "${(hasBump) 
         ? `modules/dice-addiction-v2/textures/bump/${name.includes('Grayscale') ? name.split('Grayscale')[0] : name}.webp` 
         : `modules/dice-addiction-v2/textures/${name}.webp`}"
-  });\n`,
+    }),\n`,
       'utf-8');
   })
   ])
@@ -129,7 +130,9 @@ async function buildPackage(){
   // Then we will write our color profiles to our diceaddiction.js file
   await appendFile(
     './src/scripts/diceaddiction.js',
-    `
+    `   ]);
+
+
   dice3d.addColorset({
     name: 'Dotty',
     description: "📱 Dotty",
