@@ -522,7 +522,7 @@ async function buildPackage(){
   const archive = archiver('zip', { zlib: { level: 9 } });
 
   output.on('close', () => {
-    console.log(`Created dice-addiction.zip (${archive.pointer()} total bytes)`);
+    console.log(`Created dice-addiction.zip (${(archive.pointer() / 1e+6).toFixed(2)} MB)`);
   });
 
   archive.on('warning', (err) => {

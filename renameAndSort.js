@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const promises_1 = require("fs/promises");
 const random_words_1 = __importDefault(require("random-words"));
 const generateRandomName = () => {
-    const randWords = (0, random_words_1.default)({ exactly: 2, wordsPerString: 2, separator: ' ' })[0];
+    const randWords = (0, random_words_1.default)({ exactly: 2, wordsPerString: 3, separator: ' ' })[0];
     const pascalCaseWords = randWords.split(' ')
         .map(e => e.slice(0, 1).toUpperCase().concat(e.slice(1))).join('');
     // Convert to camelCase and return

@@ -2,7 +2,7 @@ import { readdir, writeFile, readFile, unlink } from 'fs/promises'
 import randomWords from 'random-words'
 
 const generateRandomName = () => {
-  const randWords = randomWords({ exactly: 2, wordsPerString: 2, separator: ' ' })[0];
+  const randWords = randomWords({ exactly: 2, wordsPerString: 3, separator: ' ' })[0];
   const pascalCaseWords = randWords.split(' ')
   .map(e => e.slice(0,1).toUpperCase().concat(e.slice(1))).join('')
   // Convert to camelCase and return
