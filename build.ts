@@ -22,8 +22,7 @@ async function buildPackage(){
   // Lets open a write stream we will write too for writing our diceaddiction.js file
   await appendFile(
     './src/scripts/diceaddiction.js', 
-    `Hooks.on('diceSoNiceReady', async(dice3d) => {
-  await Promise.all([\n`,
+    `Hooks.on('diceSoNiceReady', async(dice3d) => {\n`,
     'utf-8',
   );
 
@@ -41,9 +40,9 @@ async function buildPackage(){
         let convertedFile;
 
         if ((width && width >= 256) || (height && height >= 256)){
-          convertedFile = await image.resize(256, 256).webp({ nearLossless: true }).toBuffer();
+          convertedFile = await image.resize(256, 256).webp().toBuffer();
         } else {
-          convertedFile = await image.webp({ nearLossless: true }).toBuffer();
+          convertedFile = await image.webp().toBuffer();
         }
 
         await writeFile(`./src/textures/${diceTextureName}.webp`, convertedFile);
@@ -69,9 +68,9 @@ async function buildPackage(){
         let convertedFile;
 
         if ((width && width >= 256) || (height && height >= 256)){
-          convertedFile = await image.resize(256, 256).webp({ lossless: true }).toBuffer();
+          convertedFile = await image.resize(256, 256).webp().toBuffer();
         } else {
-          convertedFile = await image.webp({ lossless: true }).toBuffer();
+          convertedFile = await image.webp().toBuffer();
         }
 
         await writeFile(`./src/textures/bump/${bumpMapName}.webp`, convertedFile);
@@ -96,14 +95,14 @@ async function buildPackage(){
     ...sortedTextures.map(async({ name, hasBump }) => {
     await appendFile(
       './src/scripts/diceaddiction.js', 
-      `    dice3d.addTexture("${camelCaseToPascalCase(name)}", {
+      `  await dice3d.addTexture("${camelCaseToPascalCase(name)}", {
       name: "📱 ${camelCaseToNormalCase(name)}",
       composite: "multiply",
       source: "modules/dice-addiction-v2/textures/${name}.webp",
       bump: "${(hasBump) 
         ? `modules/dice-addiction-v2/textures/bump/${name.includes('Grayscale') ? name.split('Grayscale')[0] : name}.webp` 
         : `modules/dice-addiction-v2/textures/${name}.webp`}"
-    }),\n`,
+  });\n`,
       'utf-8');
   })
   ])
@@ -119,7 +118,7 @@ async function buildPackage(){
       if (!fs.existsSync(`./src/faces/${diceFaceName}.webp`)){
         const file = await readFile(`./assets/faces/${diceFace}`);
         const image = sharp(file);
-        const convertedFile = await image.webp({ lossless: true }).toBuffer();
+        const convertedFile = await image.webp().toBuffer();
 
         await writeFile(`./src/faces/${diceFaceName}.webp`, convertedFile);
         return 'new';
@@ -130,9 +129,7 @@ async function buildPackage(){
   // Then we will write our color profiles to our diceaddiction.js file
   await appendFile(
     './src/scripts/diceaddiction.js',
-    `   ]);
-
-
+    `
   dice3d.addColorset({
     name: 'Dotty',
     description: "📱 Dotty",
